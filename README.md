@@ -16,7 +16,7 @@ The model can be used for custom images by adding an image to the same directory
 
 ## Example
 ###### Train accuracy: 94.90% <br/>Test accuracy: 90.78% <br/> (rounded to the nearest hundredth)
-<img src="https://i.imgur.com/JEW0KBM.png" alt="beef carpaccio prediction" width="320"/><img src="https://i.imgur.com/qwbskxH.png" alt="monkey prediction" width="320"/><img src="https://i.imgur.com/F93uUBE.png" alt="cost function curve" width="320"/>
+<img src="https://i.imgur.com/JEW0KBM.png" alt="beef carpaccio prediction" width="300"/><img src="https://i.imgur.com/qwbskxH.png" alt="monkey prediction" width="300"/><img src="https://i.imgur.com/F93uUBE.png" alt="cost function curve" width="300"/>
 
 
 
