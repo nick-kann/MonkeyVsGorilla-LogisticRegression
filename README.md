@@ -24,7 +24,11 @@ pip install matplotlib
 ## Author
 Nicholas Kann / [@Butter-My-Toast](https://github.com/Butter-My-Toast "Butter-My-Toast's github page")
 
-## Licenses
+
+## Credits
+#### This project uses the following datasets:
+- [Monkey dataset](https://images.cv/dataset/monkey-image-classification-dataset) (images.cv)
+- [Beef carpaccio dataset](https://images.cv/dataset/beef-carpaccio-image-classification-dataset) (images.cv)
 #### This project uses the following libraries:
 - [numpy](https://github.com/numpy/numpy) (BSD-3-Clause License) - [License](https://github.com/numpy/numpy/blob/main/LICENSE.txt)
 - [Pillow](https://github.com/python-pillow/Pillow) (HPND License) - [License](https://github.com/python-pillow/Pillow/blob/main/LICENSE)
