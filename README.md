@@ -14,6 +14,12 @@ It is recommended to run the model in a virtual environment avoid conflicts with
 The learning rate and number of iterations can be adjusted in the model's parameters to fine-tune the model's performance and achieve better test accuracy results.<br/><br/>
 The model can be used for custom images by adding an image to the same directory and changing the "test_image" string to match the filename of the custom image.
 
+## Example
+###### Train accuracy: 94.90% <br/>Test accuracy: 90.78% <br/> (rounded to the nearest hundredth)
+<img src="https://i.imgur.com/JEW0KBM.png" alt="beef carpaccio prediction" width="336"/><img src="https://i.imgur.com/qwbskxH.png" alt="monkey prediction" width="336"/><img src="https://i.imgur.com/F93uUBE.png" alt="cost function curve" width="336"/>
+
+
+
 ## Install dependencies
 ```
 pip install numpy
