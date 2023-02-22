@@ -5,9 +5,6 @@ import copy
 import matplotlib.pyplot as plt
 
 
-# C:\Users\didi\Downloads\MonkeyVsBeefCarpaccioDataset\images\data\train\beef_carpaccio
-
-
 def main():
     path = os.path.dirname(os.path.realpath(__file__))
     classes = ["beef_carpaccio", "monkey"]
@@ -58,6 +55,22 @@ def main():
     plt.xlabel('Iterations (hundreds)')
     plt.title("Learning rate = " + str(logistic_regression_model["learning_rate"]))
     plt.show()
+
+    # Add your own test image to the same directory and change the test image to the file name
+    # to see the model's prediction of your image
+    test_image = "none"
+
+    if test_image != "none":
+        fname = os.path.join(path, test_image)
+        image = np.array(Image.open(fname).resize((64, 64)))
+        plt.imshow(image)
+        image = image.reshape((64 * 64 * 3, 1))
+        image = image / 255
+        y_prediction = int(np.squeeze(predict(logistic_regression_model["w"], logistic_regression_model["b"], image)))
+        class_prediction = "\"monkey\"" if y_prediction == 1 else "\"beef carpaccio\""
+        plt.title(f"y = {y_prediction}, the model predicted that it is a {class_prediction} picture.")
+        plt.axis('off')
+        plt.show()
 
 
 def load_dataset(path, classes):
