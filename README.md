@@ -1,6 +1,6 @@
 
 # Monkey vs Beef Carpaccio Classification Model
-This is a binary classification model using logistic regression that predicts whether a given 64 x 64 pixel image is a monkey or beef carpaccio.
+This is a binary classification machine learning model that implements logistic regression to predict whether a given 64 x 64 pixel image is a monkey or beef carpaccio.
 
 To classify an image using this model, the image is flattened into a column vector and standardized by dividing each value by 255. The model treats each RGB value of the image as a node in a single layer and passes its weight into the sigmoid activation function to calculate the predicted y value (yhat). If yhat is above 0.5, the model predicts the image to be a monkey. If yhat is below 0.5, the model predicts the image to be beef carpaccio. \
 <br/><br/>
