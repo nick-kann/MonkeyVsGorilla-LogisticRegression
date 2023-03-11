@@ -7,13 +7,14 @@ import matplotlib.pyplot as plt
 
 def main():
     path = os.path.dirname(os.path.realpath(__file__))
-    classes = ["beef_carpaccio", "monkey"]
+    classes = ["gorilla", "monkey"]
+    epsilon = 1e-5
 
     # y = 1 for "monkey"
-    # y = 0 for "beef carpaccio"
-    train_x_orig, train_y_orig = load_dataset(os.path.join(path, "MonkeyVsBeefCarpaccioDataset", "train"), classes)
+    # y = 0 for "gorilla"
+    train_x_orig, train_y_orig = load_dataset(os.path.join(path, "MonkeyVsGorillaDataset"), "train", classes)
 
-    test_x_orig, test_y_orig = load_dataset(os.path.join(path, "MonkeyVsBeefCarpaccioDataset", "test"), classes)
+    test_x_orig, test_y_orig = load_dataset(os.path.join(path, "MonkeyVsGorillaDataset"), "test", classes)
 
     # Shuffling the sets so that the model doesn't learn in a certain order and bias towards beef carpaccio
     train_x_shuffle, train_y_shuffle = shuffle_set(train_x_orig, train_y_orig)
@@ -40,11 +41,11 @@ def main():
     test_x = test_x_flatten / 255
 
     # Creating the model
-    logistic_regression_model = model(train_x, train_y_shuffle, test_x, test_y_shuffle, num_iterations=2000,
-                                      learning_rate=0.005, print_cost=True)
+    logistic_regression_model = model(train_x, train_y_shuffle, test_x, test_y_shuffle, num_iterations=3000,
+                                      learning_rate=0.00005, print_cost=True)
 
     # Creating a list of indexes of test examples to show
-    indexes = [0, 1, 2, 3, 4]
+    indexes = [0, 1]
 
     show_prediction_example(logistic_regression_model, test_x, indexes)
 
@@ -62,9 +63,9 @@ def main():
 
     if test_image != "none":
         fname = os.path.join(path, test_image)
-        image = np.array(Image.open(fname).resize((64, 64)))
+        image = np.array(Image.open(fname).resize((256, 256)))
         plt.imshow(image)
-        image = image.reshape((64 * 64 * 3, 1))
+        image = image.reshape((256 * 256 * 3, 1))
         image = image / 255
         y_prediction = int(np.squeeze(predict(logistic_regression_model["w"], logistic_regression_model["b"], image)))
         class_prediction = "\"monkey\"" if y_prediction == 1 else "\"beef carpaccio\""
@@ -73,17 +74,17 @@ def main():
         plt.show()
 
 
-def load_dataset(path, classes):
+def load_dataset(path, dataset_split, classes):
     x = []
     y = []
-    # 0 for beef carpaccio
+    # 0 for gorilla
     # 1 for monkey
     for label, cls in enumerate(classes):
-        class_path = os.path.join(path, cls)
+        class_path = os.path.join(path, dataset_split, cls)
         for img_path in os.listdir(class_path):
-            img = Image.open(os.path.join(class_path, img_path))
+            img = Image.open(os.path.join(class_path, img_path)).resize((256, 256))
             x.append(np.array(img))
-            y.append(np.array(label))
+            y.append(label)
 
     return np.array(x), np.array(y)
 
@@ -106,13 +107,13 @@ def initialize_with_zeros(dim):
     return w, b
 
 
-def propagate(w, b, X, Y):
+def propagate(w, b, X, Y, epsilon=1e-5):
     # m - the number of examples
     m = X.shape[1]
 
     # Forward propagation
     a = sigmoid(np.dot(w.T, X) + b)
-    cost = (-1 / m) * (np.dot(Y, np.log(a).T) + np.dot(1 - Y, np.log(1 - a).T))
+    cost = (-1 / m) * (np.dot(Y, np.log(a + epsilon).T) + np.dot(1 - Y, np.log(1 - a + epsilon).T))
 
     # Backward propagation
     dw = (1 / m) * np.dot(X, (a - Y).T)
@@ -194,7 +195,7 @@ def model(train_x, train_y, test_x, test_y, num_iterations=2000, learning_rate=0
 
 def show_prediction_example(model, test_x, index):
     for i in index:
-        plt.imshow(test_x[:, i].reshape((64, 64, 3)))
+        plt.imshow(test_x[:, i].reshape((256, 256, 3)))
         y_prediction = int(model['Y_prediction_test'][0, i])
         class_prediction = "\"monkey\"" if y_prediction == 1 else "\"beef carpaccio\""
         plt.title(f"y = {y_prediction}, the model predicted that it is a {class_prediction} picture.")
