@@ -41,7 +41,7 @@ def main():
     test_x = test_x_flatten / 255
 
     # Creating the model
-    logistic_regression_model = model(train_x, train_y_shuffle, test_x, test_y_shuffle, num_iterations=3000,
+    logistic_regression_model = model(train_x, train_y_shuffle, test_x, test_y_shuffle, num_iterations=2500,
                                       learning_rate=0.00005, print_cost=True)
 
     # Creating a list of indexes of test examples to show
