@@ -16,7 +16,7 @@ def main():
 
     test_x_orig, test_y_orig = load_dataset(os.path.join(path, "MonkeyVsGorillaDataset"), "test", classes)
 
-    # Shuffling the sets so that the model doesn't learn in a certain order and bias towards beef carpaccio
+    # Shuffling the sets so that the model doesn't learn in a certain order and bias towards gorilla
     train_x_shuffle, train_y_shuffle = shuffle_set(train_x_orig, train_y_orig)
     test_x_shuffle, test_y_shuffle = shuffle_set(test_x_orig, test_y_orig)
 
@@ -68,7 +68,7 @@ def main():
         image = image.reshape((256 * 256 * 3, 1))
         image = image / 255
         y_prediction = int(np.squeeze(predict(logistic_regression_model["w"], logistic_regression_model["b"], image)))
-        class_prediction = "\"monkey\"" if y_prediction == 1 else "\"beef carpaccio\""
+        class_prediction = "\"monkey\"" if y_prediction == 1 else "\"gorilla\""
         plt.title(f"y = {y_prediction}, the model predicted that it is a {class_prediction} picture.")
         plt.axis('off')
         plt.show()
@@ -197,7 +197,7 @@ def show_prediction_example(model, test_x, index):
     for i in index:
         plt.imshow(test_x[:, i].reshape((256, 256, 3)))
         y_prediction = int(model['Y_prediction_test'][0, i])
-        class_prediction = "\"monkey\"" if y_prediction == 1 else "\"beef carpaccio\""
+        class_prediction = "\"monkey\"" if y_prediction == 1 else "\"gorilla\""
         plt.title(f"y = {y_prediction}, the model predicted that it is a {class_prediction} picture.")
         plt.axis('off')
         plt.show()
