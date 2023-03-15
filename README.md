@@ -1,8 +1,8 @@
 
-# Monkey vs Beef Carpaccio Classification Model
-This is a binary classification machine learning model that implements logistic regression to predict whether a given 64 x 64 pixel image is a monkey or beef carpaccio.
+# Monkey vs Gorilla Classification Model
+This is a binary classification machine learning model that implements logistic regression to predict whether a given 256 x 256 pixel image is a monkey or a gorilla
 
-To classify an image using this model, the image is flattened into a column vector and standardized by dividing each value by 255. The model treats each RGB value of the image as a node in a single layer and passes its weight into the sigmoid activation function to calculate the predicted y value (yhat). If yhat is above 0.5, the model predicts the image to be a monkey. If yhat is below 0.5, the model predicts the image to be beef carpaccio. \
+To classify an image using this model, the image is flattened into a column vector and normalized by dividing each value by 255. The model treats each RGB value of the image as a node in a single layer and passes its weight into the sigmoid activation function to calculate the predicted y value (yhat). If yhat is above 0.5, the model predicts the image to be a monkey. If yhat is below 0.5, the model predicts the image to be beef carpaccio. \
 <br/><br/>
 Here's a diagram that might help visualize the process: 
 
@@ -15,8 +15,8 @@ The learning rate and number of iterations can be adjusted in the model's parame
 The model can be used for custom images by adding an image to the same directory and changing the "test_image" string to match the filename of the custom image.
 
 ## Example
-###### Train accuracy: 94.90% <br/>Test accuracy: 90.78% <br/> (rounded to the nearest hundredth)
-<img src="https://i.imgur.com/JEW0KBM.png" alt="beef carpaccio prediction" width="400"/><img src="https://i.imgur.com/qwbskxH.png" alt="monkey prediction" width="400"/><img src="https://i.imgur.com/F93uUBE.png" alt="cost function curve" width="400"/>
+###### Test accuracy: ~79.9% (rounded to the nearest hundredth)
+<img src="https://i.imgur.com/feGzzli.png" alt="beef carpaccio prediction" width="400"/><img src="https://i.imgur.com/qwbskxH.png" alt="monkey/gorilla prediction" width="400"/><img src="https://i.imgur.com/OPt62dM.png" alt="cost function curve" width="400"/>
 
 
 
