@@ -15,8 +15,7 @@ The learning rate and number of iterations can be adjusted in the model's parame
 The model can be used for custom images by adding an image to the same directory and changing the "test_image" string to match the filename of the custom image.
 
 ## Example
-###### Test accuracy: ~79.9% (rounded to the nearest hundredth)
-###### 2500 iterations, 0.00005 learning rate
+###### Test accuracy: ~79.9% (rounded to the nearest hundredth) <br/> 2500 iterations, 0.00005 learning rate
 <img src="https://i.imgur.com/feGzzli.png" alt="beef carpaccio prediction" width="400"/><img src="https://i.imgur.com/qwbskxH.png" alt="monkey/gorilla prediction" width="400"/><img src="https://i.imgur.com/OPt62dM.png" alt="cost function curve" width="400"/>
 
 
