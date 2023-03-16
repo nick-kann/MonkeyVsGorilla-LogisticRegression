@@ -1,6 +1,6 @@
 
 # Monkey vs Gorilla Logistic Regression Classification Model
-This is a binary classification machine learning model that implements logistic regression to predict whether a given 256 x 256 pixel image is a monkey or a gorilla
+This is a binary classification machine learning model, developed without the use of machine learning frameworks, that implements logistic regression to predict whether a given 256 x 256 pixel image is a monkey or a gorilla
 
 To classify an image using this model, the image is flattened into a column vector and normalized by dividing each value by 255. The model treats each RGB value of the image as a node in a single layer and passes its weight into the sigmoid activation function to calculate the predicted y value (yhat). If yhat is above 0.5, the model predicts the image to be a monkey. If yhat is below 0.5, the model predicts the image to be gorilla. \
 <br/><br/>
