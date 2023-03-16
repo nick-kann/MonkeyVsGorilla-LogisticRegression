@@ -2,7 +2,7 @@
 # Monkey vs Gorilla Classification Model
 This is a binary classification machine learning model that implements logistic regression to predict whether a given 256 x 256 pixel image is a monkey or a gorilla
 
-To classify an image using this model, the image is flattened into a column vector and normalized by dividing each value by 255. The model treats each RGB value of the image as a node in a single layer and passes its weight into the sigmoid activation function to calculate the predicted y value (yhat). If yhat is above 0.5, the model predicts the image to be a monkey. If yhat is below 0.5, the model predicts the image to be beef carpaccio. \
+To classify an image using this model, the image is flattened into a column vector and normalized by dividing each value by 255. The model treats each RGB value of the image as a node in a single layer and passes its weight into the sigmoid activation function to calculate the predicted y value (yhat). If yhat is above 0.5, the model predicts the image to be a monkey. If yhat is below 0.5, the model predicts the image to be gorilla. \
 <br/><br/>
 Here's a diagram that might help visualize the process: 
 
@@ -33,8 +33,7 @@ Nicholas Kann / [@Butter-My-Toast](https://github.com/Butter-My-Toast "Butter-My
 
 ## Credits
 #### This project uses the following datasets:
-- [Monkey dataset](https://images.cv/dataset/monkey-image-classification-dataset) (images.cv)
-- [Beef carpaccio dataset](https://images.cv/dataset/beef-carpaccio-image-classification-dataset) (images.cv)
+- [Animal Species Classification - V3](https://www.kaggle.com/datasets/utkarshsaxenadn/animal-image-classification-dataset) (Kaggle)
 #### This project uses the following libraries:
 - [numpy](https://github.com/numpy/numpy) (BSD-3-Clause License) - [License](https://github.com/numpy/numpy/blob/main/LICENSE.txt)
 - [Pillow](https://github.com/python-pillow/Pillow) (HPND License) - [License](https://github.com/python-pillow/Pillow/blob/main/LICENSE)
