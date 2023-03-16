@@ -16,6 +16,7 @@ The model can be used for custom images by adding an image to the same directory
 
 ## Example
 ###### Test accuracy: ~79.9% (rounded to the nearest hundredth)
+###### 2500 iterations, 0.00005 learning rate
 <img src="https://i.imgur.com/feGzzli.png" alt="beef carpaccio prediction" width="400"/><img src="https://i.imgur.com/qwbskxH.png" alt="monkey/gorilla prediction" width="400"/><img src="https://i.imgur.com/OPt62dM.png" alt="cost function curve" width="400"/>
 
 
