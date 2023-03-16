@@ -11,11 +11,11 @@ Here's a diagram that might help visualize the process:
 
 ## Usage
 It is recommended to run the model in a virtual environment avoid conflicts with other projects that may be using different versions of the same libraries.<br/><br/>
-The learning rate and number of iterations can be adjusted in the model's parameters to fine-tune the model's performance and achieve better test accuracy results.<br/><br/>
+The learning rate and number of iterations can be adjusted in the model's hyperparameters to fine-tune the model's performance and achieve better test accuracy results.<br/><br/>
 The model can be used for custom images by adding an image to the same directory and changing the "test_image" string to match the filename of the custom image.
 
 ## Example
-###### Test accuracy: ~79.9% (rounded to the nearest hundredth) <br/>Parameters: iterations = 2500, learning rate = 0.00005
+###### Test accuracy: ~79.9% (rounded to the nearest hundredth) <br/>Hyperparameters: iterations = 2500, learning rate = 0.00005
 <img src="https://i.imgur.com/feGzzli.png" alt="beef carpaccio prediction" width="400"/><img src="https://i.imgur.com/qwbskxH.png" alt="monkey/gorilla prediction" width="400"/><img src="https://i.imgur.com/OPt62dM.png" alt="cost function curve" width="400"/>
 
 
