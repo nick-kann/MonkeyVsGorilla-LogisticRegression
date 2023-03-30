@@ -28,7 +28,7 @@ pip install matplotlib
 ```
 
 ## Author
-Nicholas Kann / [@Butter-My-Toast](https://github.com/Butter-My-Toast "Butter-My-Toast's github page")
+Nicholas Kann / [@butter-my-toast](https://github.com/butter-my-toast "butter-my-toast's github page")
 
 
 ## Credits
